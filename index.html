@@ -602,20 +602,24 @@
       }
     });
 
+    // Updated Share function with your live link
     function shareCard() {
+      const cardLink = "https://yuvrajkumarjaindhanoriya7.github.io/adiwalicardfromnishijain/";
+
       if (navigator.share) {
         navigator.share({
           title: 'Happy Diwali ✨ from Nishi Jain',
           text: 'Wishing you a bright and beautiful Diwali filled with joy and prosperity! — Nishi Jain',
-          url: window.location.href
+          url: cardLink
         }).catch(() => {});
       } else {
-        const text = '🪔 Happy Diwali! May the festival of lights fill your life with joy, prosperity and happiness. With warm wishes — Nishi Jain ✨';
+        // Fallback: copy the link + message
+        const text = `🪔 Happy Diwali!\nMay the festival of lights fill your life with joy, prosperity and happiness.\nWith warm wishes — Nishi Jain ✨\n\n${cardLink}`;
         navigator.clipboard.writeText(text).then(() => {
-          alert('Greeting copied to clipboard! 💌');
+          alert('Greeting + link copied to clipboard! 💌');
         });
       }
     }
   </script>
 </body>
-  </html>
+</html>
