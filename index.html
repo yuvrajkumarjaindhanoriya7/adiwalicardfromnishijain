@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali ✨ | From Nishi Jain</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 40%, #4a1942 100%);
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
+
+    /* Stars background */
+    .stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle var(--duration) ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #ffd700;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float-up linear infinite;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% {
+        transform: translateY(-20vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* Main Card */
+    .card {
+      position: relative;
+      width: 90%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(255, 180, 0, 0.15),
+        inset 0 0 30px rgba(255, 215, 0, 0.05);
+      padding: 40px 30px 24px;
+      text-align: center;
+      z-index: 10;
+      overflow: hidden;
+      animation: card-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes card-appear {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6b35, #ffd700, #ff6b35);
+      border-radius: 28px 28px 0 0;
+    }
+
+    /* Diya container */
+    .diya-container {
+      position: relative;
+      height: 140px;
+      margin: 10px 0 22px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 28px;
+    }
+
+    .diya {
+      position: relative;
+      width: 70px;
+      height: 50px;
+    }
+
+    .diya-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 28px;
+      background: linear-gradient(to bottom, #e67e22, #d35400);
+      border-radius: 0 0 35px 35px;
+      box-shadow: 0 4px 15px rgba(211, 84, 0, 0.5);
+    }
+
+    .diya-base::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 5px;
+      right: 5px;
+      height: 12px;
+      background: linear-gradient(to bottom, #f39c12, #e67e22);
+      border-radius: 50%;
+    }
+
+    .flame {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 36px;
+      background: radial-gradient(ellipse at bottom, #fff7e6 0%, #ffd700 30%, #ff8c00 70%, transparent 100%);
+      border-radius: 50% 50% 20% 20%;
+      animation: flicker 0.15s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 12px #ffd700) drop-shadow(0 0 25px #ff8c00);
+      transform-origin: bottom center;
+    }
+
+    .flame::before {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.9;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+      100% { transform: translateX(-50%) scale(1.05) rotate(2deg); }
+    }
+
+    .diya-glow {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 40px;
+      background: radial-gradient(ellipse, rgba(255, 180, 0, 0.4), transparent 70%);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffd700, #ff9f1c, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+
+    .subtitle {
+      color: #ffcc80;
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .message {
+      color: #f5e6c8;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 18px;
+      opacity: 0.95;
+    }
+
+    .message span {
+      color: #ffd700;
+      font-weight: 500;
+    }
+
+    /* From section */
+    .from-section {
+      margin: 20px 0 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    .from-label {
+      font-size: 0.8rem;
+      color: rgba(255, 204, 128, 0.7);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .from-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #ffd700;
+      letter-spacing: 0.5px;
+    }
+
+    /* Buttons */
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9f1c, #ff6b35);
+      color: #1a0b2e;
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #ffd700;
+      border: 1.5px solid rgba(255, 215, 0, 0.5);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 215, 0, 0.1);
+      border-color: #ffd700;
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      font-size: 0.78rem;
+      color: rgba(255, 204, 128, 0.55);
+      margin-bottom: 16px;
+    }
+
+    /* Developer section - very bottom */
+    .developer {
+      margin-top: 8px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 215, 0, 0.18);
+    }
+
+    .developer-label {
+      font-size: 0.7rem;
+      color: rgba(255, 204, 128, 0.45);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .developer-name {
+      font-size: 0.85rem;
+      color: rgba(255, 215, 0, 0.7);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    #fireworks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .rangoli {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .rangoli-1 {
+      top: 20px;
+      left: 20px;
+      background: radial-gradient(circle, #ffd700 20%, transparent 21%),
+                  radial-gradient(circle, #ff6b35 40%, transparent 41%),
+                  radial-gradient(circle, #ffd700 60%, transparent 61%);
+      border-radius: 50%;
+    }
+
+    .rangoli-2 {
+      bottom: 30px;
+      right: 25px;
+      background: radial-gradient(circle, #ff6b35 15%, transparent 16%),
+                  radial-gradient(circle, #ffd700 35%, transparent 36%),
+                  radial-gradient(circle, #ff6b35 55%, transparent 56%);
+      border-radius: 50%;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 32px 22px 20px;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .diya-container {
+        gap: 18px;
+        height: 120px;
+      }
+      .diya {
+        width: 58px;
+      }
+      .diya-base {
+        width: 58px;
+      }
+      .from-name {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <canvas id="fireworks"></canvas>
+
+  <div class="card">
+    <div class="rangoli rangoli-1"></div>
+    <div class="rangoli rangoli-2"></div>
+
+    <div class="diya-container">
+      <div class="diya">
+        <div class="flame"></div>
+        <div class="diya-base"></div>
+        <div class="diya-glow"></div>
+      </div>
+      <div class="diya" style="transform: scale(1.15);">
+        <div class="flame" style="animation-delay: 0.07s;"></div>
+        <div class="diya-base"></div>
+        <div class="diya-glow"></div>
+      </div>
+      <div class="diya">
+        <div class="flame" style="animation-delay: 0.12s;"></div>
+        <div class="diya-base"></div>
+        <div class="diya-glow"></div>
+      </div>
+    </div>
+
+    <h1>Happy Diwali</h1>
+    <p class="subtitle">Festival of Lights</p>
+
+    <p class="message">
+      May the glow of the diyas light up your life<br>
+      with <span>joy, prosperity & endless happiness</span>.<br>
+      Wishing you and your family a very<br>
+      bright and beautiful Diwali!
+    </p>
+
+    <div class="from-section">
+      <p class="from-label">With warm wishes</p>
+      <p class="from-name">Nishi Jain</p>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" onclick="launchFireworks()">✨ Celebrate</button>
+      <button class="btn-secondary" onclick="shareCard()">Share 💌</button>
+    </div>
+
+    <p class="footer">🪔 May this Diwali bring light to every corner of your life</p>
+
+    <!-- Developer section at the very bottom -->
+    <div class="developer">
+      <p class="developer-label">Developed by</p>
+      <p class="developer-name">yuvrajjaindhanoriya</p>
+    </div>
+  </div>
+
+  <script>
+    // Twinkling stars
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 2.5 + 0.5;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+      star.style.animationDelay = Math.random() * 5 + 's';
+      starsContainer.appendChild(star);
+    }
+
+    // Floating particles
+    function createParticles() {
+      for (let i = 0; i < 25; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.animationDuration = (Math.random() * 8 + 6) + 's';
+        p.style.animationDelay = Math.random() * 8 + 's';
+        p.style.width = p.style.height = (Math.random() * 3 + 2) + 'px';
+        p.style.opacity = Math.random() * 0.6 + 0.3;
+        document.body.appendChild(p);
+      }
+    }
+    createParticles();
+
+    // Fireworks
+    const canvas = document.getElementById('fireworks');
+    const ctx = canvas.getContext('2d');
+    let fireworks = [];
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Firework {
+      constructor(x, y, targetY) {
+        this.x = x;
+        this.y = y;
+        this.targetY = targetY;
+        this.speed = 4 + Math.random() * 3;
+        this.angle = -Math.PI / 2 + (Math.random() - 0.5) * 0.3;
+        this.vx = Math.cos(this.angle) * this.speed;
+        this.vy = Math.sin(this.angle) * this.speed;
+        this.color = `hsl(${Math.random() * 40 + 20}, 100%, 60%)`;
+        this.trail = [];
+      }
+
+      update() {
+        this.trail.push({ x: this.x, y: this.y });
+        if (this.trail.length > 8) this.trail.shift();
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += 0.04;
+        return this.y <= this.targetY;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.moveTo(this.trail[0]?.x || this.x, this.trail[0]?.y || this.y);
+        for (let t of this.trail) {
+          ctx.lineTo(t.x, t.y);
+        }
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+    }
+
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 5 + 1.5;
+        this.vx = Math.cos(angle) * speed;
+        this.vy = Math.sin(angle) * speed;
+        this.alpha = 1;
+        this.decay = Math.random() * 0.02 + 0.01;
+        this.size = Math.random() * 3 + 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += 0.05;
+        this.alpha -= this.decay;
+        return this.alpha > 0;
+      }
+
+      draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    function explode(x, y, color) {
+      const count = 50 + Math.floor(Math.random() * 30);
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle(x, y, color));
+      }
+    }
+
+    function launchFireworks() {
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const x = Math.random() * canvas.width * 0.6 + canvas.width * 0.2;
+          const startY = canvas.height;
+          const targetY = Math.random() * canvas.height * 0.4 + 80;
+          fireworks.push(new Firework(x, startY, targetY));
+        }, i * 180);
+      }
+    }
+
+    function animate() {
+      ctx.fillStyle = 'rgba(26, 11, 46, 0.15)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = fireworks.length - 1; i >= 0; i--) {
+        const f = fireworks[i];
+        f.draw();
+        if (f.update()) {
+          explode(f.x, f.y, f.color);
+          fireworks.splice(i, 1);
+        }
+      }
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.draw();
+        if (!p.update()) {
+          particles.splice(i, 1);
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    setTimeout(launchFireworks, 800);
+    setTimeout(launchFireworks, 2200);
+
+    document.body.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'BUTTON') {
+        const x = e.clientX;
+        const y = e.clientY;
+        const color = `hsl(${Math.random() * 40 + 20}, 100%, 60%)`;
+        explode(x, y, color);
+      }
+    });
+
+    function shareCard() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Happy Diwali ✨ from Nishi Jain',
+          text: 'Wishing you a bright and beautiful Diwali filled with joy and prosperity! — Nishi Jain',
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        const text = '🪔 Happy Diwali! May the festival of lights fill your life with joy, prosperity and happiness. With warm wishes — Nishi Jain ✨';
+        navigator.clipboard.writeText(text).then(() => {
+          alert('Greeting copied to clipboard! 💌');
+        });
+      }
+    }
+  </script>
+</body>
+  </html>
